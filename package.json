@@ -24,7 +24,10 @@
 	"devDependencies": {
 		"@babel/cli": "^7.6.4",
 		"@babel/core": "^7.6.4",
-		"babel-core": "^6.26.3",
+		"@babel/plugin-proposal-class-properties": "^7.0.0",
+		"@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"babel-core": "7.0.0-bridge.0",
 		"babel-eslint": "^10.0.3",
 		"eslint": "^6.6.0",
 		"eslint-plugin-react": "^7.16.0"
