@@ -4,7 +4,11 @@
 	"description": "Quick and dirty apollo server for GraphQL",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start_local": "node dist/index.js",
+		"transpile_api_apollo": "babel ./src/api_apollo --out-dir dist",
+		"re_build_apollo": "rimraf dist && yarn transpile_api_apollo && yarn start_local",
+		"host:dev": "nodemon --exec yarn re_build_apollo"
 	},
 	"repository": {
 		"type": "git",
