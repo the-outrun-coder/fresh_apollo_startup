@@ -30,6 +30,8 @@
 		"babel-core": "7.0.0-bridge.0",
 		"babel-eslint": "^10.0.3",
 		"eslint": "^6.6.0",
-		"eslint-plugin-react": "^7.16.0"
+		"eslint-plugin-react": "^7.16.0",
+		"nodemon": "^1.19.4",
+		"rimraf": "^3.0.0"
 	}
 }
