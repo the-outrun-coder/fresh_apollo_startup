@@ -1,6 +1,8 @@
 import { ApolloServer, gql } from 'apollo-server';
 import config from './config';
 
+import dataSources from './datasources';
+
 export const startApolloAPI = () => {
 	console.log('>> STARTING GRAPH-QL APOLLO API !', config.environment);
 
@@ -29,7 +31,7 @@ export const startApolloAPI = () => {
 				}
 			}
 		},
-		// dataSources: () => {} // << Connect and handle api dependencies
+		dataSources, // << Connections to handle api data dependencies
 		context() {
 			// << Creates context handle across all resolvers
 			return { user: null };
