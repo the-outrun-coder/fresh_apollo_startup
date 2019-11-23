@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start_local": "node dist/index.js",
+		"start_local_apollo": "node dist/index.js",
 		"transpile_api_apollo": "babel ./src/api_apollo --out-dir dist",
-		"re_build_apollo": "rimraf dist && yarn transpile_api_apollo && yarn start_local",
+		"re_build_apollo": "rimraf dist && yarn transpile_api_apollo && yarn start_local_apollo",
 		"host:dev": "nodemon --exec yarn re_build_apollo"
 	},
 	"repository": {
