@@ -30,10 +30,17 @@ export const startApolloAPI = () => {
 		},
 		// dataSources: () => {} // << Connect and handle api dependencies
 		context({ req }) {
+			const headers = req.headers;
 			console.log(
 				'\n\n>> Access the request data from the context handle for all end point calls.',
-				req.headers,
-				req.body
+				req.body,
+				'\n - LOGIN TOKEN:',
+				headers.logintoken,
+				'\n - USER ID:',
+				headers.userid,
+				'\n - DB AUTH TOKEN:',
+				headers.authtoken,
+				''
 			);
 
 			// << Creates context handle across all resolvers
