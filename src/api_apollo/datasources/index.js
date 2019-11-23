@@ -1,5 +1,5 @@
 // DATASOURCES INDEX
-import someBranchOfEndpointAdapters from './targetData/adapters';
+import someBranchOfEndpointAdapters from './targetDataExample/adapters';
 
 export default () => ({
 	...someBranchOfEndpointAdapters
