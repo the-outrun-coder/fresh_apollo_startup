@@ -2,6 +2,7 @@ import { ApolloServer, gql } from 'apollo-server';
 import config from './config';
 
 import dataSources from './datasources';
+import context from './context';
 
 export const startApolloAPI = () => {
 	console.log('>> STARTING GRAPH-QL APOLLO API !', config.environment);
@@ -32,10 +33,7 @@ export const startApolloAPI = () => {
 			}
 		},
 		dataSources, // << Connections to handle api data dependencies
-		context() {
-			// << Creates context handle across all resolvers
-			return { user: null };
-		}
+		context
 	});
 
 	server.listen(config.port).then(({ url }) => {
