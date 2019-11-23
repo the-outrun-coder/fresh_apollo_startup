@@ -1,7 +1,8 @@
 import { ApolloServer, gql } from 'apollo-server';
+import config from './config';
 
 export const startApolloAPI = () => {
-	console.log('>> STARTING GRAPH-QL APOLLO API !');
+	console.log('>> STARTING GRAPH-QL APOLLO API !', config.environment);
 
 	const rootSchema = gql`
 		type Cat {
@@ -35,7 +36,7 @@ export const startApolloAPI = () => {
 		}
 	});
 
-	server.listen().then(({ url }) => {
+	server.listen(config.port).then(({ url }) => {
 		console.log(`🚀 Server ready at ${url}`);
 	});
 };
