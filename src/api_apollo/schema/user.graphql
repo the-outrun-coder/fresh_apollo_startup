@@ -1,0 +1,14 @@
+type User {
+	dbToken: String
+	loginToken: String
+}
+
+input loginInput {
+	userId: String!
+	passWord: String!
+}
+
+extend type Query {
+	logIn(input: loginInput!): User!
+	logOut: User
+}

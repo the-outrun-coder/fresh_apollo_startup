@@ -1,0 +1,4 @@
+type SampleResource {
+	name: String
+	type: String
+}
