@@ -1,6 +1,7 @@
 import { ApolloServer, gql } from 'apollo-server';
 import config from './config';
 
+import resolvers from './resolvers';
 import dataSources from './datasources';
 import context from './context';
 
@@ -23,16 +24,13 @@ export const startApolloAPI = () => {
 	`;
 
 	const server = new ApolloServer({
-		typeDefs: [rootSchema], // << gql syntax for schema and typeDefs (Object definitions)
-		resolvers: {
-			// << Handlers for incoming requests
-			Query: {
-				myCat() {
-					return { name: 'Garfield' };
-				}
-			}
-		},
-		dataSources, // << Connections to handle api data dependencies
+		// >> gql syntax for schema and typeDefs (Object definitions)
+		typeDefs: [rootSchema],
+		// >> Controllers to Handle dataSource requests and satisfying the requested schema
+		resolvers,
+		// >> Connections to handle api data dependencies
+		dataSources,
+		// >> Base handle that accepts all inbound requests for all resolvers
 		context
 	});
 
