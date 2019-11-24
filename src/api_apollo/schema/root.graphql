@@ -1,0 +1,12 @@
+type Cat {
+	name: String
+	furColor: String
+}
+
+type Query {
+	myCat: Cat
+}
+
+schema {
+	query: Query
+}
